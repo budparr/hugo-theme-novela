@@ -14,8 +14,10 @@
   @example - Go Template
     {{ $articles := partialCached "func/GetArticles" . "articles" }}
 */}}
+
 {{ $articles := slice }}
-{{ with where site.RegularPages "Type" "post" }}
+{{ $mainSection := index (site.Params.mainSections) 0}}
+{{ with where site.RegularPages "Type" $mainSection }}
   {{ $articles = . }}
 {{ end }}
 {{ return $articles }}
