@@ -17,7 +17,7 @@
 
 {{ $articles := slice }}
 {{ $mainSection := index (site.Params.mainSections) 0}}
-{{ with where site.RegularPages "Type" $mainSection }}
+{{ with where site.RegularPages "Section" $mainSection }}
   {{ $articles = . }}
 {{ end }}
 {{ return $articles }}
