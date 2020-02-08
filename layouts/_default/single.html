@@ -2,12 +2,18 @@
 
 <section class="section narrow">
 
-    {{ partial "page/hero.html" . }}
+    {{ partial "article/hero.html" . }}
 
-    <article  id="articleContent" class="post-content">
+    {{ partial "article/progress" . }}
+
+    <article  id="articleContent" class="post-content" style="position:relative;">
         {{ .Content }}
     </article>
-    
+
+
+    {{ partial "article/next.html" . }}
 </section>
 
+{{ $script := resources.Get "js/progressBar.js" }}
+ <script src="{{ $script.RelPermalink }}"></script>
 {{ end }}
