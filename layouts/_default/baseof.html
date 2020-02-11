@@ -21,6 +21,7 @@
 
     {{ $script := resources.Get "js/prism.js" }}
     <script src="{{ $script.RelPermalink }}"></script>
+    {{ partial "scripts-bottom.html" .}}
 </body>
 
 </html>
